@@ -32,6 +32,7 @@ let approvedNFTs = [
     '0x23d9B4b351d5C57f38206dB0697B891d2A32732E', // Potato
     '0xdccB0e678bEA8FE3d97921CbFF85Be757a223312', // BWB series
     '0x147f7D752ed7375E4e7B50aC2C94723F171cE90d', // RealMoutai
+    '0x36F7e5eaFA2E96872B40cFBeD8e41767337ca8cF', // Queens
 ];
 
 // Order type # to name
@@ -76,7 +77,7 @@ let sendTgMessage = async (token, id, message) => {
 
         const nft = new ethers.Contract(token, erc721ABI, account);
         nft.name().then((tokenName) => {
-            let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis.cash/token/${token}/${id})\n\n${message}\n\n[View collection](https://oasis.cash/collection/${token})`;
+            let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis.cash/token/${token}/${id})\n\n${message}\n\n[View collection on OASIS](https://oasis.cash/collection/${token})`;
 
             bot.sendPhoto(channelId, photo, {
                 caption: formattedMessage,
