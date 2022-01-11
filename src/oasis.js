@@ -1,4 +1,5 @@
 const oasisABI = require('./abi/oasis.json');
+const oasisABIV2 = require('./abi/oasis.json');
 const erc721ABI = require('./abi/erc721.json');
 const {ethers} = require("ethers");
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
@@ -16,6 +17,7 @@ const account = wallet.connect(provider);
 
 // Load OASIS contract
 let oasisContract = new ethers.Contract('0x657061bf5D268F70eA3eB1BCBeb078234e5Df19d', oasisABI, account);
+let oasisContractV2 = new ethers.Contract('0x3b968177551a2aD9fc3eA06F2F41d88b22a081F7', oasisABIV2, account);
 
 // List of approved collections
 let approvedNFTs = [
@@ -108,6 +110,39 @@ async function main() {
 
     // event MakeOrder(IERC721 indexed token, uint256 id, bytes32 indexed hash, address seller);
     oasisContract.on('MakeOrder', (token, id, hash, seller) => {
+        console.log('MakeOrder', token, id, hash, seller);
+        oasisContract.getCurrentPrice(hash).then((price) => {
+            oasisContract.orderInfo(hash).then((orderInfo) => {
+                sendTgMessage(
+                    token,
+                    id,
+                    '🆕 Listed for ' + ethers.utils.formatEther(price.toString()).replace('.', '\\.') + ' BCH\n'
+                    + 'Auction type : ' + translateOrderType(orderInfo.orderType)
+                );
+            });
+        });
+    });
+
+    // V2
+    oasisContractV2.on('Bid', (token, id, hash, bidder, bidPrice) => {
+        console.log('Bid', token, id, hash, bidder, bidPrice)
+        sendTgMessage(
+            token,
+            id,
+            '↗️ Received bid for ' + ethers.utils.formatEther(bidPrice.toString()).replace('.', '\\.') + ' BCH');
+    });
+
+    // event Claim(IERC721 indexed token, uint256 id, bytes32 indexed hash, address seller, address taker, uint256 price);
+    oasisContractV2.on('Claim', (token, id, hash, seller, taker, price) => {
+        console.log('Claim', token, id, hash, seller, taker, price)
+        sendTgMessage(
+            token,
+            id,
+            '✅ Sold for ' + ethers.utils.formatEther(price.toString()).replace('.', '\\.') + ' BCH');
+    });
+
+    // event MakeOrder(IERC721 indexed token, uint256 id, bytes32 indexed hash, address seller);
+    oasisContractV2.on('MakeOrder', (token, id, hash, seller) => {
         console.log('MakeOrder', token, id, hash, seller);
         oasisContract.getCurrentPrice(hash).then((price) => {
             oasisContract.orderInfo(hash).then((orderInfo) => {
