@@ -144,8 +144,8 @@ async function main() {
     // event MakeOrder(IERC721 indexed token, uint256 id, bytes32 indexed hash, address seller);
     oasisContractV2.on('MakeOrder', (token, id, hash, seller) => {
         console.log('MakeOrder', token, id, hash, seller);
-        oasisContract.getCurrentPrice(hash).then((price) => {
-            oasisContract.orderInfo(hash).then((orderInfo) => {
+        oasisContractV2.getCurrentPrice(hash).then((price) => {
+            oasisContractV2.orderInfo(hash).then((orderInfo) => {
                 sendTgMessage(
                     token,
                     id,
