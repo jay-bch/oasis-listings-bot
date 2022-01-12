@@ -1,5 +1,5 @@
 const oasisABI = require('./abi/oasis.json');
-const oasisABIV2 = require('./abi/oasis.json');
+const oasisABIV2 = require('./abi/oasisv2.json');
 const erc721ABI = require('./abi/erc721.json');
 const {ethers} = require("ethers");
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
