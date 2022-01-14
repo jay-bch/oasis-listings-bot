@@ -35,6 +35,7 @@ let approvedNFTs = [
     '0xdccB0e678bEA8FE3d97921CbFF85Be757a223312', // BWB series
     '0x147f7D752ed7375E4e7B50aC2C94723F171cE90d', // RealMoutai
     '0x36F7e5eaFA2E96872B40cFBeD8e41767337ca8cF', // Queens
+    '0x62587576142bd5b73F71d6DA51389Fb6b92216AE', // LADS
 ];
 
 // Order type # to name
