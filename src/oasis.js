@@ -38,7 +38,7 @@ let approvedNFTs = [
     '0x62587576142bd5b73F71d6DA51389Fb6b92216AE', // LADS
     '0x65496F09592883390Df9780964CE04F2e2C07b93', // SPICE NFT
     '0x48973dbAC0d46B939CD12A7250eFBA965e8a8cf2', // REAPERS
-    '0x2f36Da8063F84D92EEBe869238423C2eBEA02b7e'  // LAMBO
+    '0xacFe3CeFac34845952EaECD1a184b8c0BD70A0FD'  // LAMBO
 ];
 
 // Order type # to name
@@ -57,6 +57,7 @@ let getPhotoForToken = async function(token, id) {
     var nft = new ethers.Contract(token, erc721ABI, account);
     return nft.tokenURI(id).then(function(url) {
         return fetch(url).then(async function (response) {
+            if(response.startsWith('http://')) return response;
             return response.json();
         }).then(function (data) {
             return data.image;
