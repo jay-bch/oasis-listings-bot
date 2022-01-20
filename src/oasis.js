@@ -57,7 +57,6 @@ let getPhotoForToken = async function(token, id) {
     var nft = new ethers.Contract(token, erc721ABI, account);
     return nft.tokenURI(id).then(function(url) {
         return fetch(url).then(async function (response) {
-            if(response.startsWith('http://')) return response;
             return response.json();
         }).then(function (data) {
             return data.image;
