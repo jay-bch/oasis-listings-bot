@@ -5,7 +5,7 @@ const {ethers} = require("ethers");
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 const TelegramBot = require('node-telegram-bot-api');
-const { channelId, token} = require('./settings');
+const { channelId, sfwChannelId, token} = require('./settings');
 
 const bot = new TelegramBot(token, {polling: true});
 
@@ -47,6 +47,10 @@ let approvedNFTs = [
     '0xe0DBb71DC5BB9dfF69e7c7ff882926E56070cAF9'    // BCHDAO
 ];
 
+let nswfNFTs = [
+    '0x8868da0a8CF8E28e683366368f6912A2005b1Cf5',   // WOJAK
+]
+
 // Order type # to name
 let translateOrderType = function(type) {
     var translatedOrderType = 'Unknown';
@@ -76,9 +80,16 @@ let getPhotoForToken = async function(token, id) {
 
 // Send TG messages
 let sendTgMessage = async (token, id, message) => {
+    let safeForWork = true;
+
+
     // Only approved collections
     if(!approvedNFTs.includes(token)) {
         return;
+    }
+
+    if(nswfNFTs.includes(token)) {
+     safeForWork = false;
     }
 
     getPhotoForToken(token, id).then((photo) => {
@@ -95,6 +106,13 @@ let sendTgMessage = async (token, id, message) => {
                 caption: formattedMessage,
                 parse_mode: 'MarkdownV2'
             });
+
+            if(safeForWork) {
+                bot.sendPhoto(sfwChannelId, photo, {
+                    caption: formattedMessage,
+                    parse_mode: 'MarkdownV2'
+                });
+            }
         });
     });
 }
