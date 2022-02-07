@@ -49,7 +49,8 @@ let approvedNFTs = [
     '0x87e2aF80e1DB921ddB70e8F6DE19398AbD7060b9',  // BCH & SBCH Influencers
     '0xbec69e04e99e21210213405E0fe99b95c040BD74', // JOYBOTS
     '0x5C1B3f5486cf342e491Ce316e98281822b800979', // Arachnids
-    '0x0C3A8C1ef42A0A0a0AEDc6D89c96Ec51bedE41B6' // Modern Fairy
+    '0x0C3A8C1ef42A0A0a0AEDc6D89c96Ec51bedE41B6', // Modern Fairy
+    '0x44482A93b34138Ad156f158F67dd1F6bfa483619' // Pixs RPG
 ];
 
 let nswfNFTs = [
