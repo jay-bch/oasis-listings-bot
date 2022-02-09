@@ -107,9 +107,6 @@ let sendTgMessage = async (token, id, message) => {
         const nft = new ethers.Contract(token, erc721ABI, account);
         nft.name().then((tokenName) => {
             let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis.cash/token/${token}/${id})\n\n${message}\n\n[View collection on OASIS](https://oasis.cash/collection/${token})`;
-            if(token === '0xC054A7F7866ba73889511c48967be776008eb408') {
-                formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://apes.oasis.cash/token/${token}/${id})\n\n${message}\n\n[View collection on OASIS](https://apes.oasis.cash/collection/${token})`;
-            }
 
             bot.sendPhoto(channelId, photo, {
                 caption: formattedMessage,
