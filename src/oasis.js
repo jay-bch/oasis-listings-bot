@@ -82,7 +82,7 @@ let getPhotoForToken = async function(token, id) {
         return fetch(url).then(async function (response) {
             return response.json();
         }).then(function (data) {
-            return `data.image?r=${token}`;
+            return `${data.image}?r=${token}`;
         }).catch(function () {
             return null;
         });
