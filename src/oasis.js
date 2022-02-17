@@ -111,6 +111,8 @@ let sendTgMessage = async (token, id, message) => {
             photo = 'https://oasis.cash/assets/images/oasis_logo.svg';
         }
 
+        console.log("PHOTO", photo);
+
         const nft = new ethers.Contract(token, erc721ABI, account);
         nft.name().then((tokenName) => {
             let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis.cash/token/${token}/${id})\n\n${message}\n\n[View collection on OASIS](https://oasis.cash/collection/${token})`;
@@ -123,7 +125,7 @@ let sendTgMessage = async (token, id, message) => {
             if(safeForWork) {
                 bot.sendPhoto(sfwChannelId, photo, {
                     caption: formattedMessage,
-                    parse_mode: 'MarkdownV2'
+                    parse_mode: 'MarkdownV2',
                 });
             }
         });
