@@ -58,7 +58,8 @@ let approvedNFTs = [
     '0xC995199DC53922caCE4f6ac14A476eF8c9429387', // Pixel Guys Club
     '0x9EE8EA9E772f82b94Ee455CEf50D40f77e9E12C1', // Anonymous NFT
     '0xC57C7A1C9864A1D00F11731c6FA6a5dC16EDFb7F', // META ARMY
-    '0x43e93a9369Cc588a34F9f6ED97DD4b523e003331' // Annlogy X FRN: 8-bit Zodiac
+    '0x43e93a9369Cc588a34F9f6ED97DD4b523e003331', // Annlogy X FRN: 8-bit Zodiac
+    '0xadA2b62f75C9d619c4Bb68A03C7541f6cE5cc127' // Schoolgirls
 ];
 
 let nswfNFTs = [
