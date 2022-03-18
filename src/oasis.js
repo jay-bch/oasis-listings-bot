@@ -159,7 +159,7 @@ let sendTgMessage = async (token, id, message) => {
                 }).catch((e) => {
                     getTokenMetaDataName(token, id).then((name)=> {
                         let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis.cash/token/${token}/${id}) \\- ${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis.cash/collection/${token})`;
-                        bot.sendMessage(channelId, formattedMessage, {
+                        bot.sendMessage(sfwChannelId, formattedMessage, {
                             parse_mode: 'MarkdownV2'
                         });
                     })
