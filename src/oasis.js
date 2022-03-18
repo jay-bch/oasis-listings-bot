@@ -145,7 +145,7 @@ let sendTgMessage = async (token, id, message) => {
                 parse_mode: 'MarkdownV2'
             }).catch((e) => {
                 getTokenMetaDataName(token, id).then((name)=> {
-                    let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis.cash/token/${token}/${id}) - ${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis.cash/collection/${token})`;
+                    let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis.cash/token/${token}/${id}) \\- ${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis.cash/collection/${token})`;
                     bot.sendMessage(channelId, formattedMessage, {
                         parse_mode: 'MarkdownV2'
                     });
@@ -158,7 +158,7 @@ let sendTgMessage = async (token, id, message) => {
                     parse_mode: 'MarkdownV2',
                 }).catch((e) => {
                     getTokenMetaDataName(token, id).then((name)=> {
-                        let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis.cash/token/${token}/${id}) - ${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis.cash/collection/${token})`;
+                        let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis.cash/token/${token}/${id}) \\- ${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis.cash/collection/${token})`;
                         bot.sendMessage(channelId, formattedMessage, {
                             parse_mode: 'MarkdownV2'
                         });
