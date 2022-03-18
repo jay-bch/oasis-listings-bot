@@ -99,6 +99,21 @@ let getPhotoForToken = async function(token, id) {
     });
 }
 
+let getTokenMetaDataName = async function(token, id) {
+    var nft = new ethers.Contract(token, erc721ABI, account);
+    return nft.tokenURI(id).then(function(url) {
+        return fetch(url).then(async function (response) {
+            return response.json();
+        }).then(function (data) {
+            return data.name;
+        }).catch(function () {
+            return null;
+        });
+    }).catch(function() {
+        return null;
+    });
+}
+
 // Send TG messages
 let sendTgMessage = async (token, id, message) => {
     let safeForWork = true;
@@ -129,10 +144,12 @@ let sendTgMessage = async (token, id, message) => {
                 caption: formattedMessage,
                 parse_mode: 'MarkdownV2'
             }).catch((e) => {
-                bot.sendMessage(channelId, formattedMessage, {
-                    parse_mode: 'MarkdownV2'
-                });
-
+                getTokenMetaDataName(token, id).then((name)=> {
+                    let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis.cash/token/${token}/${id}) - ${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis.cash/collection/${token})`;
+                    bot.sendMessage(channelId, formattedMessage, {
+                        parse_mode: 'MarkdownV2'
+                    });
+                })
             });
 
             if(safeForWork) {
@@ -140,9 +157,12 @@ let sendTgMessage = async (token, id, message) => {
                     caption: formattedMessage,
                     parse_mode: 'MarkdownV2',
                 }).catch((e) => {
-                    bot.sendMessage(sfwChannelId, formattedMessage, {
-                        parse_mode: 'MarkdownV2'
-                    });
+                    getTokenMetaDataName(token, id).then((name)=> {
+                        let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis.cash/token/${token}/${id}) - ${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis.cash/collection/${token})`;
+                        bot.sendMessage(channelId, formattedMessage, {
+                            parse_mode: 'MarkdownV2'
+                        });
+                    })
 
                 });;
             }
