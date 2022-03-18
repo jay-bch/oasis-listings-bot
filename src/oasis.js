@@ -128,13 +128,23 @@ let sendTgMessage = async (token, id, message) => {
             bot.sendPhoto(channelId, photo, {
                 caption: formattedMessage,
                 parse_mode: 'MarkdownV2'
+            }).catch((e) => {
+                bot.sendMessage(channelId, formattedMessage, {
+                    parse_mode: 'MarkdownV2'
+                });
+
             });
 
             if(safeForWork) {
                 bot.sendPhoto(sfwChannelId, photo, {
                     caption: formattedMessage,
                     parse_mode: 'MarkdownV2',
-                });
+                }).catch((e) => {
+                    bot.sendMessage(sfwChannelId, formattedMessage, {
+                        parse_mode: 'MarkdownV2'
+                    });
+
+                });;
             }
         });
     });
