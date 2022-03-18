@@ -64,7 +64,8 @@ let approvedNFTs = [
     '0x271c2fFf28dFFa8aBe423293326Fc2D57844a4cd', // Korro
     '0xcEBcD3b339eE0ed9fcb0465eBeac3994A7CF2a7a', // Pixelitos
     '0x2cb256a216EB5c74Bf43A3Ff32b8Cd5bB55692Fe', // space bot
-    '0x1A0839E51837Db26589EFbe401947d1C7aAc28E2' // sphynx
+    '0x1A0839E51837Db26589EFbe401947d1C7aAc28E2', // sphynx
+    '0x32650517D7D4c54935197ff5F3e575D5fb210A63' // LNS
 ];
 
 let nswfNFTs = [
