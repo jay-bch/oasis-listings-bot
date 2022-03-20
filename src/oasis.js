@@ -1,7 +1,7 @@
 const oasisABI = require('./abi/oasis.json');
 const oasisABIV2 = require('./abi/oasisv2.json');
 const erc721ABI = require('./abi/erc721.json');
-const {ethers} = require("ethers");
+const {ethers, Contract} = require("ethers");
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 const TelegramBot = require('node-telegram-bot-api');
@@ -146,6 +146,10 @@ let sendTgMessage = async (token, id, message) => {
             }).catch((e) => {
                 getTokenMetaDataName(token, id).then((name)=> {
                     let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis.cash/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis.cash/collection/${token})`;
+
+                    if(token === '0x32650517D7D4c54935197ff5F3e575D5fb210A63' ) { // LNS CASE
+                        formattedMessage = `[${tokenName.replace('.', '\\.')}](https://oasis.cash/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis.cash/collection/${token})`;
+                    }
                     bot.sendMessage(channelId, formattedMessage, {
                         parse_mode: 'MarkdownV2'
                     });
@@ -159,6 +163,11 @@ let sendTgMessage = async (token, id, message) => {
                 }).catch((e) => {
                     getTokenMetaDataName(token, id).then((name)=> {
                         let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis.cash/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis.cash/collection/${token})`;
+
+                        if(token === '0x32650517D7D4c54935197ff5F3e575D5fb210A63' ) { // LNS CASE
+                            formattedMessage = `[${tokenName.replace('.', '\\.')}](https://oasis.cash/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis.cash/collection/${token})`;
+                        }
+
                         bot.sendMessage(sfwChannelId, formattedMessage, {
                             parse_mode: 'MarkdownV2'
                         });
