@@ -147,6 +147,9 @@ let sendTgMessage = async (token, id, message) => {
                 parse_mode: 'MarkdownV2'
             }).catch((e) => {
                 getTokenMetaDataName(token, id).then((name)=> {
+                    if(tokenName === 'nigger.bch') {
+                        return;
+                    }
                     let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis.cash/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis.cash/collection/${token})`;
 
                     if(token === '0x32650517D7D4c54935197ff5F3e575D5fb210A63' ) { // LNS CASE
@@ -164,6 +167,9 @@ let sendTgMessage = async (token, id, message) => {
                     parse_mode: 'MarkdownV2',
                 }).catch((e) => {
                     getTokenMetaDataName(token, id).then((name)=> {
+                        if(tokenName === 'nigger.bch') {
+                            return;
+                        }
                         let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis.cash/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis.cash/collection/${token})`;
 
                         if(token === '0x32650517D7D4c54935197ff5F3e575D5fb210A63' ) { // LNS CASE
