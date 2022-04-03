@@ -69,7 +69,10 @@ let approvedNFTs = [
     '0x9c907c7CC0B671E51667bb4178419043c5b94d9c', // BCH Wizzard
     '0xad2f872AF013C7275eEBC6e7a43d604bA186db6D', // FunkyBots
     '0x4f0A64a905EEeB70810a079019Fd23586eca5268', // FunkyBots
-    '0xA82C6A40B3d78D3ec51073ac59549889b9B76209' // Pixs
+    '0xA82C6A40B3d78D3ec51073ac59549889b9B76209', // Pixs
+    '0x0b12b767440e3f0CdC374304e1741329ab3683C3', // Picololi
+    '0x3aABc773Cb699AD2F70dfc6F46316c7aB12e35e9', // Luck Tigers
+    '0xe24Ed1C92feab3Bb87cE7c97Df030f83E28d9667' // LAW Rights
 ];
 
 let nswfNFTs = [
@@ -257,4 +260,3 @@ async function main() {
     });
 }
 
-main();
