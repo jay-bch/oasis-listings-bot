@@ -94,6 +94,11 @@ let translateOrderType = function(type) {
 // Get image, when it fails always return null
 let getPhotoForToken = async function(token, id) {
     var nft = new ethers.Contract(token, erc721ABI, account);
+
+    if(token === '0x1De097da3Fe906137ece38a0583dA427b99e566e') { // Rat collectibles
+        return 'https://raw.githubusercontent.com/shadowkite/rat-collectibles/main/bot/' + id + '.png';
+    }
+
     return nft.tokenURI(id).then(function(url) {
         return fetch(url).then(async function (response) {
             return response.json();
