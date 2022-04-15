@@ -73,7 +73,8 @@ let approvedNFTs = [
     '0x0b12b767440e3f0CdC374304e1741329ab3683C3', // Picololi
     '0x3aABc773Cb699AD2F70dfc6F46316c7aB12e35e9', // Lucky Tigers
     '0xe24Ed1C92feab3Bb87cE7c97Df030f83E28d9667', // LAW Rights
-    '0x1De097da3Fe906137ece38a0583dA427b99e566e' // Rats specials
+    '0x1De097da3Fe906137ece38a0583dA427b99e566e', // Rats specials
+    '0xFD325598bbB5672f8136A5b35885722a3d440aE0' // Kensho
 ];
 
 let nswfNFTs = [
