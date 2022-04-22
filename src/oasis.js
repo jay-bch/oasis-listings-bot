@@ -75,7 +75,8 @@ let approvedNFTs = [
     '0x1De097da3Fe906137ece38a0583dA427b99e566e', // Rats specials
     '0xFD325598bbB5672f8136A5b35885722a3d440aE0', // Kensho
     '0xc6f9DbbE871ed2f79E3fF584f8Aa30E29B35bA61', // Moodies
-    '0x76A9a7866Ec82fC616Bd5024Fb627335538C8757' // Rebels
+    '0x76A9a7866Ec82fC616Bd5024Fb627335538C8757', // Rebels
+    '0x01c2B0359bde2bE676d8aA9470DE921DC3b4EAF9' // Stolen Art
 ];
 
 let nswfNFTs = [
