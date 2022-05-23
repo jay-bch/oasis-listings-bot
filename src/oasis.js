@@ -78,7 +78,7 @@ let approvedNFTs = [
     '0x76A9a7866Ec82fC616Bd5024Fb627335538C8757', // Rebels
     '0x01c2B0359bde2bE676d8aA9470DE921DC3b4EAF9', // Stolen Art
     '0x58437B3A91db2F9e477F4b329c812Dff25F03357', // LawPunk Items
-    '0x47c388a14712434b14b2a111ce4042b537d69d4a', // Kensho exclusives
+    '0x47C388a14712434B14b2a111ce4042B537D69d4a', // Kensho exclusives
     '0xb040AfF405D749dB94fEe8F60C721380e19E0c01' // Smart Babies
 ];
 
