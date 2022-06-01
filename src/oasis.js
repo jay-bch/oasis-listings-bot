@@ -82,7 +82,8 @@ let approvedNFTs = [
     '0xb040AfF405D749dB94fEe8F60C721380e19E0c01', // Smart Babies
     '0xcAd88cBE12bf9A0eAa0f80091dbFbdC0257Abe68', // Cash Bears
     '0xc6f9DbbE871ed2f79E3fF584f8Aa30E29B35bA61', // Moodies
-    '0xD710EF1E6aDfb5f81B3598f9Eea70512c5B100F5' // Council of frogs
+    '0xD710EF1E6aDfb5f81B3598f9Eea70512c5B100F5', // Council of frogs
+    '0xFDEd6cD4B88a24e00d9Ea242338367fe734CBff5' // PokeBen
 ];
 
 let nswfNFTs = [
