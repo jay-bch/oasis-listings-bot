@@ -83,7 +83,10 @@ let approvedNFTs = [
     '0xcAd88cBE12bf9A0eAa0f80091dbFbdC0257Abe68', // Cash Bears
     '0xc6f9DbbE871ed2f79E3fF584f8Aa30E29B35bA61', // Moodies
     '0xD710EF1E6aDfb5f81B3598f9Eea70512c5B100F5', // Council of frogs
-    '0xFDEd6cD4B88a24e00d9Ea242338367fe734CBff5' // PokeBen
+    '0xFDEd6cD4B88a24e00d9Ea242338367fe734CBff5', // PokeBen
+    '0xF9c0787670908c8c363E2205608bc5f4a6f95e09', // PunkApes
+    '0xFB2EAc4FcE1c021512758620af79271889F7E7dC', // BigButts
+    '0x5aC48D7AC0dc02eB8e186bf1603a27F32F76D5fC' // Xolos
 ];
 
 let nswfNFTs = [
@@ -113,12 +116,19 @@ let getPhotoForToken = async function(token, id) {
         return 'https://ipfs.io/ipfs/Qmas8SGoBzBi4J888SUjoPf7xkh4yGmCzdnrYWoC9B2p8S/' + id + '.png';
     }
 
+    if(token === '0xFB2EAc4FcE1c021512758620af79271889F7E7dC') { // BigButts
+        return 'https://ipfs.io/ipfs/bafybeihde3yj4vnylkqvl5i73zl6fzxfz5zrrwn5ui5eubr23ruollnj7u/' + id + '.gif';
+    }
+
     return nft.tokenURI(id).then(function(url) {
         return fetch(url).then(async function (response) {
             return response.json();
         }).then(function (data) {
             return data.image;
         }).catch(function () {
+            if(token === '0x5aC48D7AC0dc02eB8e186bf1603a27F32F76D5fC') {
+                console.log('https://ipfs.io/ipfs/' + url.substr(7));
+            }
             return null;
         });
     }).catch(function() {
