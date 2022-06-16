@@ -86,7 +86,8 @@ let approvedNFTs = [
     '0xFDEd6cD4B88a24e00d9Ea242338367fe734CBff5', // PokeBen
     '0xF9c0787670908c8c363E2205608bc5f4a6f95e09', // PunkApes
     '0xFB2EAc4FcE1c021512758620af79271889F7E7dC', // BigButts
-    '0x5aC48D7AC0dc02eB8e186bf1603a27F32F76D5fC' // Xolos
+    '0x5aC48D7AC0dc02eB8e186bf1603a27F32F76D5fC', // Xolos
+    '0xbad64f85727D27e67631BC1a5B6e339cd1830c4a0' // Cackles
 ];
 
 let nswfNFTs = [
