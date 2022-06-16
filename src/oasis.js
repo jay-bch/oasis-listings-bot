@@ -88,7 +88,7 @@ let approvedNFTs = [
     '0xFB2EAc4FcE1c021512758620af79271889F7E7dC', // BigButts
     '0x5aC48D7AC0dc02eB8e186bf1603a27F32F76D5fC', // Xolos
     '0xbad64f85727D27e67631BC1a5B6e339cd1830c4a0', // Cackles
-    '0xF3f86E70484EDEa8cb7a029E448501A76759604D' // reapers first drop
+    '0x1Db8975dEfdfbA58979c26085031F0dC9DB24787' // reapers first drop
 ];
 
 let nswfNFTs = [
