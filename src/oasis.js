@@ -127,9 +127,9 @@ let getPhotoForToken = async function(token, id) {
             return response.json();
         }).then(function (data) {
             if(token === '0x1Db8975dEfdfbA58979c26085031F0dC9DB24787') {
-                let image = 'https://ipfs.io/ipfs/QmZLcc3VMxxYj71v2FiMFWhZVQmELvPtKG5XChPJwZXBGY/' + id + 'png';
+                let image = 'https://ipfs.io/ipfs/QmZLcc3VMxxYj71v2FiMFWhZVQmELvPtKG5XChPJwZXBGY/' + id + '.png';
                 if(data.image.endsWith('mp4')) {
-                    image = 'https://ipfs.io/ipfs/QmZLcc3VMxxYj71v2FiMFWhZVQmELvPtKG5XChPJwZXBGY/' + id + 'mp4';
+                    image = 'https://ipfs.io/ipfs/QmZLcc3VMxxYj71v2FiMFWhZVQmELvPtKG5XChPJwZXBGY/' + id + '.mp4';
                 }
 
                 console.log('REAPER SUMMON', image)
