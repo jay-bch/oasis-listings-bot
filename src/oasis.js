@@ -126,11 +126,18 @@ let getPhotoForToken = async function(token, id) {
         return fetch(url).then(async function (response) {
             return response.json();
         }).then(function (data) {
+            if(token === '0x1Db8975dEfdfbA58979c26085031F0dC9DB24787') {
+                let image = 'https://ipfs.io/ipfs/QmZLcc3VMxxYj71v2FiMFWhZVQmELvPtKG5XChPJwZXBGY/' + id + 'png';
+                if(data.image.endsWith('mp4')) {
+                    image = 'https://ipfs.io/ipfs/QmZLcc3VMxxYj71v2FiMFWhZVQmELvPtKG5XChPJwZXBGY/' + id + 'mp4';
+                }
+
+                console.log('REAPER SUMMON', image)
+                return image;
+            }
+
             return data.image;
         }).catch(function () {
-            if(token === '0x5aC48D7AC0dc02eB8e186bf1603a27F32F76D5fC') {
-                console.log('https://ipfs.io/ipfs/' + url.substr(7));
-            }
             return null;
         });
     }).catch(function() {
