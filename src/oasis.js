@@ -79,7 +79,7 @@ let approvedNFTs = [
     '0x01c2B0359bde2bE676d8aA9470DE921DC3b4EAF9', // Stolen Art
     '0x58437B3A91db2F9e477F4b329c812Dff25F03357', // LawPunk Items
     '0x47C388a14712434B14b2a111ce4042B537D69d4a', // Kensho exclusives
-    '0xb040AfF405D749dB94fEe8F60C721380e19E0c01', // Smart Babies
+    '0xb040AfF405D749dB94fEe8F60C721380e19E0c01', // SmartBabies
     '0xcAd88cBE12bf9A0eAa0f80091dbFbdC0257Abe68', // Cash Bears
     '0xc6f9DbbE871ed2f79E3fF584f8Aa30E29B35bA61', // Moodies
     '0xD710EF1E6aDfb5f81B3598f9Eea70512c5B100F5', // Council of frogs
@@ -88,7 +88,10 @@ let approvedNFTs = [
     '0xFB2EAc4FcE1c021512758620af79271889F7E7dC', // BigButts
     '0x5aC48D7AC0dc02eB8e186bf1603a27F32F76D5fC', // Xolos
     '0xbad64f85727D27e67631BC1a5B6e339cd1830c4a0', // Cackles
-    '0x1Db8975dEfdfbA58979c26085031F0dC9DB24787' // reapers first drop
+    '0x1Db8975dEfdfbA58979c26085031F0dC9DB24787', // reapers first drop
+    '0xb1C2103F29341C0E62aE88a5d13D84b5ea6757A9', // Reaperville
+    '0x1f0dD278D62868fa58016060a1548973F8AFEd55', // Goblin Town,
+    '0x2E9173F46ea4733538a86025C6bE39fCbd71Eeb6' // I'm tired
 ];
 
 let nswfNFTs = [
