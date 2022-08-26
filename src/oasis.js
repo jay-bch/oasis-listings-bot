@@ -53,7 +53,7 @@ let getPhotoForToken = async function(token, id) {
         return 'https://ipfs.io/ipfs/bafybeigxhngfuf4ayoewiyvqp6ejcgd74pzjrqxssfkvzpwjurjq2lhyqa/' + id + '.png';
     }
 
-    if(token === '0xd38B22794B308a2e55808a13D1E6a80C4be94Fd5') { // Cats
+    if(token === '0x7Aee3e04012a0DB957CB9EaE375d462688639C2A') { // Cats
         return 'https://oasisnft.cash/output/cashcats/' + id + '.png';
     }
 
