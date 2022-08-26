@@ -48,9 +48,13 @@ let getPhotoForToken = async function(token, id) {
     //     return 'https://raw.githubusercontent.com/shadowkite/rat-collectibles/main/bot/' + id + '.png';
     // }
 
-    // if(token === '0xc6f9DbbE871ed2f79E3fF584f8Aa30E29B35bA61') { // Moodies
-    //     return 'https://ipfs.io/ipfs/Qmas8SGoBzBi4J888SUjoPf7xkh4yGmCzdnrYWoC9B2p8S/' + id + '.png';
-    // }
+    if(token === '0xd38B22794B308a2e55808a13D1E6a80C4be94Fd5') { // Realdogepunks
+        return 'https://ipfs.io/ipfs/bafybeigxhngfuf4ayoewiyvqp6ejcgd74pzjrqxssfkvzpwjurjq2lhyqa/' + id + '.png';
+    }
+
+    if(token === '0xd38B22794B308a2e55808a13D1E6a80C4be94Fd5') { // Cats
+        return 'https://oasisnft.cash/output/cashcats/' + id + '.png';
+    }
 
     // if(token === '0xFB2EAc4FcE1c021512758620af79271889F7E7dC') { // BigButts
     //     return 'https://ipfs.io/ipfs/bafybeihde3yj4vnylkqvl5i73zl6fzxfz5zrrwn5ui5eubr23ruollnj7u/' + id + '.gif';
@@ -80,8 +84,19 @@ let getPhotoForToken = async function(token, id) {
 
 let getTokenMetaDataName = async function(token, id) {
     var nft = new ethers.Contract(token, erc721ABI, account);
-    return nft.tokenURI(id).then(function(url) {
+    return nft.tokenURI(id).then(function(_url) {
+        let url = _url;
+
+        if(token === '0xd38B22794B308a2e55808a13D1E6a80C4be94Fd5') { // Moodies
+            url = 'https://ipfs.io/ipfs/bafybeiegbl22ube3lvg7hyfp242dmksdcvel43nlkhpk3j7x5gq2mpqylq/' + id + '.json';
+        }
+
+        if(token === '0x7Aee3e04012a0DB957CB9EaE375d462688639C2A') { // Moodies
+            url = 'https://oasisnft.cash/output/cashcats/meta/' + id + '.json';
+        }
         return fetch(url).then(async function (response) {
+
+
             return response.json();
         }).then(function (data) {
             return data.name;
@@ -138,28 +153,30 @@ let sendTgMessage = async (token, id, message) => {
                 })
             });
 
-            if(safeForWork) {
-                bot.sendPhoto(sfwChannelId, photo, {
-                    caption: formattedMessage,
-                    parse_mode: 'MarkdownV2',
-                }).catch((e) => {
-                    getTokenMetaDataName(token, id).then((name)=> {
-                        if(tokenName === 'nigger.bch') {
-                            return;
-                        }
-                        let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://doge.oasis.cash/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://doge.oasis.cash/collection/${token})`;
+            // if(safeForWork) {
+            //     bot.sendPhoto(sfwChannelId, photo, {
+            //         caption: formattedMessage,
+            //         parse_mode: 'MarkdownV2',
+            //     }).catch((e) => {
+            //         console.log('error', e);
+            //         getTokenMetaDataName(token, id).then((name)=> {
+            //             if(tokenName === 'nigger.bch') {
+            //                 return;
+            //             }
+            //             console.log('>>>', tokenName, token, id, message)
+            //             let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://doge.oasis.cash/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://doge.oasis.cash/collection/${token})`;
 
-                        if(token === '0x0aF878360B48b5f51F4e919f3cC1EC08B78627ad' ) { // LNS CASE
-                            formattedMessage = `[${tokenName.replace('.', '\\.')}](https://doge.oasis.cash/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://doge.oasis.cash/collection/${token})`;
-                        }
+            //             if(token === '0x0aF878360B48b5f51F4e919f3cC1EC08B78627ad' ) { // LNS CASE
+            //                 formattedMessage = `[${tokenName.replace('.', '\\.')}](https://doge.oasis.cash/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://doge.oasis.cash/collection/${token})`;
+            //             }
 
-                        bot.sendMessage(sfwChannelId, formattedMessage, {
-                            parse_mode: 'MarkdownV2'
-                        });
-                    })
+            //             bot.sendMessage(sfwChannelId, formattedMessage, {
+            //                 parse_mode: 'MarkdownV2'
+            //             });
+            //         })
 
-                });;
-            }
+            //     });;
+            // }
         });
     });
 }
