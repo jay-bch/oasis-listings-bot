@@ -22,7 +22,8 @@ let oasisContractV2 = new ethers.Contract('0x1D2851fdC3d392f4eE952B5050d6b7073B8
 // List of approved collections
 let approvedNFTs = [
     '0xd38B22794B308a2e55808a13D1E6a80C4be94Fd5', // RealDogePunks
-    '0x0aF878360B48b5f51F4e919f3cC1EC08B78627ad' // Doge Domain Service
+    '0x0aF878360B48b5f51F4e919f3cC1EC08B78627ad', // Doge Domain Service
+    '0x7Aee3e04012a0DB957CB9EaE375d462688639C2A' // Cats
 ];
 
 let nswfNFTs = [
