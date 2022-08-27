@@ -133,7 +133,7 @@ let sendTgMessage = async (token, id, message) => {
 
         const nft = new ethers.Contract(token, erc721ABI, account);
         nft.name().then((tokenName) => {
-            let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis-nft.dog/token/${token}/${id})\n\n${message}\n\n[View collection on OASIS](https://oasis-nft.dog/collection/${token})`;
+            let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis-nft.dog/token/${token}/${id})\n\n${message}\n\n[View collection on oasis-nft.dog](https://oasis-nft.dog/collection/${token})`;
 
             bot.sendPhoto(channelId, photo, {
                 caption: formattedMessage,
@@ -143,10 +143,10 @@ let sendTgMessage = async (token, id, message) => {
                     if(tokenName === 'nigger.doge') {
                         return;
                     }
-                    let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis-nft.dog/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis-nft.dog/collection/${token})`;
+                    let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis-nft.dog/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on oasis-nft.dog](https://oasis-nft.dog/collection/${token})`;
 
                     if(token === '0x0aF878360B48b5f51F4e919f3cC1EC08B78627ad' ) { // DNS CASE
-                        formattedMessage = `[${tokenName.replace('.', '\\.')}](https://oasis-nft.dog/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis-nft.dog/collection/${token})`;
+                        formattedMessage = `[${tokenName.replace('.', '\\.')}](https://oasis-nft.dog/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on oasis-nft.dog](https://oasis-nft.dog/collection/${token})`;
                     }
                     bot.sendMessage(channelId, formattedMessage, {
                         parse_mode: 'MarkdownV2'
@@ -165,10 +165,10 @@ let sendTgMessage = async (token, id, message) => {
             //                 return;
             //             }
             //             console.log('>>>', tokenName, token, id, message)
-            //             let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis-nft.dog/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis-nft.dog/collection/${token})`;
+            //             let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis-nft.dog/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on oasis-nft.dog](https://oasis-nft.dog/collection/${token})`;
 
             //             if(token === '0x0aF878360B48b5f51F4e919f3cC1EC08B78627ad' ) { // LNS CASE
-            //                 formattedMessage = `[${tokenName.replace('.', '\\.')}](https://oasis-nft.dog/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis-nft.dog/collection/${token})`;
+            //                 formattedMessage = `[${tokenName.replace('.', '\\.')}](https://oasis-nft.dog/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on oasis-nft.dog](https://oasis-nft.dog/collection/${token})`;
             //             }
 
             //             bot.sendMessage(sfwChannelId, formattedMessage, {
