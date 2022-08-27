@@ -17,7 +17,7 @@ const account = wallet.connect(provider);
 
 // Load OASIS contract
 // let oasisContract = new ethers.Contract('0x657061bf5D268F70eA3eB1BCBeb078234e5Df19d', oasisABI, account);
-let oasisContractV2 = new ethers.Contract('0x1D2851fdC3d392f4eE952B5050d6b7073B884Fdf', oasisABIV2, account);
+let oasisContractV2 = new ethers.Contract('0x3E79C89f479824Bc24b9eAD73EB8c55F322FE963', oasisABIV2, account);
 
 // List of approved collections
 let approvedNFTs = [
