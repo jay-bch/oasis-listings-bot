@@ -23,7 +23,7 @@ let oasisContractV2 = new ethers.Contract('0x3E79C89f479824Bc24b9eAD73EB8c55F322
 let approvedNFTs = [
     '0xd38B22794B308a2e55808a13D1E6a80C4be94Fd5', // RealDogePunks
     '0x0aF878360B48b5f51F4e919f3cC1EC08B78627ad', // Doge Domain Service
-    '0x7Aee3e04012a0DB957CB9EaE375d462688639C2A' // Cats
+    '0xbeaE0fd8cceCC76AfcC137d89f2B006e8c543C84' // Dogepunks
 ];
 
 let nswfNFTs = [
@@ -53,8 +53,8 @@ let getPhotoForToken = async function(token, id) {
         return 'https://ipfs.io/ipfs/bafybeigxhngfuf4ayoewiyvqp6ejcgd74pzjrqxssfkvzpwjurjq2lhyqa/' + id + '.png';
     }
 
-    if(token === '0x7Aee3e04012a0DB957CB9EaE375d462688639C2A') { // Cats
-        return 'https://oasisnft.cash/output/cashcats/' + id + '.png';
+    if(token === '0xbeaE0fd8cceCC76AfcC137d89f2B006e8c543C84') { // Dogepunks
+        return 'https://oasisnft.cash/output/dogepunks/images/' + id + '.png';
     }
 
     // if(token === '0xFB2EAc4FcE1c021512758620af79271889F7E7dC') { // BigButts
@@ -88,12 +88,12 @@ let getTokenMetaDataName = async function(token, id) {
     return nft.tokenURI(id).then(function(_url) {
         let url = _url;
 
-        if(token === '0xd38B22794B308a2e55808a13D1E6a80C4be94Fd5') { // Moodies
+        if(token === '0xd38B22794B308a2e55808a13D1E6a80C4be94Fd5') { // RealDogePunks
             url = 'https://ipfs.io/ipfs/bafybeiegbl22ube3lvg7hyfp242dmksdcvel43nlkhpk3j7x5gq2mpqylq/' + id + '.json';
         }
 
-        if(token === '0x7Aee3e04012a0DB957CB9EaE375d462688639C2A') { // Moodies
-            url = 'https://oasisnft.cash/output/cashcats/meta/' + id + '.json';
+        if(token === '0xbeaE0fd8cceCC76AfcC137d89f2B006e8c543C84') { // Dogepunks
+            url = 'https://oasisnft.cash/output/dogepunks/meta/' + id + '.json';
         }
         return fetch(url).then(async function (response) {
 
