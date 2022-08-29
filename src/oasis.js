@@ -50,7 +50,7 @@ let getPhotoForToken = async function(token, id) {
     // }
 
     if(token === '0xd38B22794B308a2e55808a13D1E6a80C4be94Fd5') { // Realdogepunks
-        return 'https://ipfs.io/ipfs/bafybeigxhngfuf4ayoewiyvqp6ejcgd74pzjrqxssfkvzpwjurjq2lhyqa/' + id + '.png';
+        return 'https://oasisnft.cash/output/realdogepunks/images/' + id + '.png';
     }
 
     if(token === '0xbeaE0fd8cceCC76AfcC137d89f2B006e8c543C84') { // Dogepunks
@@ -89,7 +89,7 @@ let getTokenMetaDataName = async function(token, id) {
         let url = _url;
 
         if(token === '0xd38B22794B308a2e55808a13D1E6a80C4be94Fd5') { // RealDogePunks
-            url = 'https://ipfs.io/ipfs/bafybeiegbl22ube3lvg7hyfp242dmksdcvel43nlkhpk3j7x5gq2mpqylq/' + id + '.json';
+            url = 'https://oasisnft.cash/output/realdogepunks/meta/' + id + '.json';
         }
 
         if(token === '0xbeaE0fd8cceCC76AfcC137d89f2B006e8c543C84') { // Dogepunks
