@@ -25,7 +25,8 @@ let approvedNFTs = [
     '0x0aF878360B48b5f51F4e919f3cC1EC08B78627ad', // Doge Domain Service
     '0xbeaE0fd8cceCC76AfcC137d89f2B006e8c543C84', // Dogepunks
     '0xBafF37Aa3667AbB92D9d10c2B0A1D4128033c4dF', // DAYC
-    '0xE46727bb5B84d574eCCa7e562A36c23525FcF8Dc' // Council of Frogs
+    '0xE46727bb5B84d574eCCa7e562A36c23525FcF8Dc', // Council of Frogs
+    '0xa2E57fa488cf272c87b066e2a3E0672c0c58784d' // Nightmare Rats
 ];
 
 let nswfNFTs = [
