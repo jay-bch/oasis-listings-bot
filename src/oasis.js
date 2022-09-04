@@ -10,7 +10,7 @@ const { channelId, sfwChannelId, token} = require('./settings');
 const bot = new TelegramBot(token, {polling: true});
 
 // Setup network
-var provider = new ethers.providers.JsonRpcProvider('https://rpc.dogmoney.money/public/full', 2000);
+var provider = new ethers.providers.JsonRpcProvider('https://rpc.yodeswap.dog', 2000);
 var wallet = ethers.Wallet.createRandom();
 
 const account = wallet.connect(provider);
