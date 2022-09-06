@@ -25,9 +25,13 @@ let approvedNFTs = [
     '0x0aF878360B48b5f51F4e919f3cC1EC08B78627ad', // Doge Domain Service
     '0xbeaE0fd8cceCC76AfcC137d89f2B006e8c543C84', // Dogepunks
     '0xBafF37Aa3667AbB92D9d10c2B0A1D4128033c4dF', // DAYC
+    '0x9fC2766e5fD172754cC188E1a8F7aA6a4F366b27', // BDKC
     '0xE46727bb5B84d574eCCa7e562A36c23525FcF8Dc', // Council of Frogs
     '0xa2E57fa488cf272c87b066e2a3E0672c0c58784d', // Nightmare Rats
     '0x8F49C3CdDc3D5571eE9Ac05dC42be0Bdd01f8E60', // DogeChain Shibes
+    '0x5fEf6BAEa34eA78B07Da6E1c36909897b96f1772', // ApePunks
+    '0xFED9E67c30C76e416371B4763FC02f8a33e52b5D', // Doge DickButts
+    '0xA716093013a0859f7de7a7eBBC40dd7e3eEb91cA', // Doge Versus
 ];
 
 let nswfNFTs = [
@@ -65,13 +69,22 @@ let getPhotoForToken = async function(token, id) {
         return 'https://oasisnft.cash/output/dayc/images/' + id + '.png';
     }
 
+    if(token === '0x9fC2766e5fD172754cC188E1a8F7aA6a4F366b27') { // BDKC
+        return 'https://ipfs.io/ipfs/bafybeigh6outgpiernko2dsett44eqhkygpqzokrnprfxdlgiroien6gxy/' + id + '.png';
+    }
+
     if(token === '0x8F49C3CdDc3D5571eE9Ac05dC42be0Bdd01f8E60') { // Shibes
         return 'https://ipfs.io/ipfs/bafybeicbmh5xvvtn5ogg3zdfrot6a5sjoxzys2dtmhl4dlfrxs4xidmvhq/' + id + '.png';
     }
 
-    // if(token === '0xFB2EAc4FcE1c021512758620af79271889F7E7dC') { // BigButts
-    //     return 'https://ipfs.io/ipfs/bafybeihde3yj4vnylkqvl5i73zl6fzxfz5zrrwn5ui5eubr23ruollnj7u/' + id + '.gif';
-    // }
+    if(token === '0x5fEf6BAEa34eA78B07Da6E1c36909897b96f1772') { // ApePunks
+        return 'https://ipfs.io/ipfs/QmauVScsMHYDzKqYarWByxfbwh8Kk8eTfQQr2ATYj5LEt2/' + id + '.png';
+    }
+
+    if(token === '0xFED9E67c30C76e416371B4763FC02f8a33e52b5D') { // Doge Dickbutts
+        return 'https://ipfs.io/ipfs/QmctDEugXq8osL8ZMKGoKpbaKsjiRFP9QaB6b4BJWjzh7m/' + id + '.jpeg';
+    }
+
 
     return nft.tokenURI(id).then(function(url) {
         return fetch(url).then(async function (response) {
@@ -111,6 +124,15 @@ let getTokenMetaDataName = async function(token, id) {
         if(token === '0xBafF37Aa3667AbB92D9d10c2B0A1D4128033c4dF') { // DAYC
             url = 'https://oasisnft.cash/output/dayc/meta/' + id + '.json';
         }
+
+        if(token === '0x5fEf6BAEa34eA78B07Da6E1c36909897b96f1772') { // ApePunks
+            url = 'https://ipfs.io/ipfs/QmQhg3r4Rj4Dr3UvRh2Nf5eNU9oFgLGRvC5RtmPeuHjHbZ/' + id + '.json';
+        }
+
+        if(token === '0xFED9E67c30C76e416371B4763FC02f8a33e52b5D') { //Doge DickButts
+            url = 'https://ipfs.io/ipfs/QmXucZ4Su3AfP5jc9vRRLaRhTkZHdEVuQCKReeAB8wRAiZ/' + id;
+        }
+
         return fetch(url).then(async function (response) {
 
 
