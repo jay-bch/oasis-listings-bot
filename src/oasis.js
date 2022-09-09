@@ -32,6 +32,7 @@ let approvedNFTs = [
     '0x5fEf6BAEa34eA78B07Da6E1c36909897b96f1772', // ApePunks
     '0xFED9E67c30C76e416371B4763FC02f8a33e52b5D', // Doge DickButts
     '0xA716093013a0859f7de7a7eBBC40dd7e3eEb91cA', // Doge Versus
+    '0xC995199DC53922caCE4f6ac14A476eF8c9429387', // Kimon
 ];
 
 let nswfNFTs = [
@@ -181,7 +182,7 @@ let sendTgMessage = async (token, id, message) => {
                     if(tokenName === 'nigger.doge') {
                         return;
                     }
-                    let formattedMessage = `[${tokenName.replace('.', '\\.')} \\#${id}](https://oasis-nft.dog/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis-nft.dog/collection/${token})`;
+                    let formattedMessage = `[${tokenName.replace('.', '\\.').replace('#', '\\#')}  \\#${id}](https://oasis-nft.dog/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis-nft.dog/collection/${token})`;
 
                     if(token === '0x0aF878360B48b5f51F4e919f3cC1EC08B78627ad' ) { // DNS CASE
                         formattedMessage = `[${tokenName.replace('.', '\\.')}](https://oasis-nft.dog/token/${token}/${id}) \n\n${name.replace('.', '\\.')} \n\n${message}\n\n[View collection on OASIS](https://oasis-nft.dog/collection/${token})`;
