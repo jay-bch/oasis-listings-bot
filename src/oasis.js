@@ -34,6 +34,7 @@ let approvedNFTs = [
     '0xA716093013a0859f7de7a7eBBC40dd7e3eEb91cA', // Doge Versus
     '0xC995199DC53922caCE4f6ac14A476eF8c9429387', // Kimon
     '0xDB89785426FCcded4C2A24EB6De11c964179561c', // DogechainChimps
+    '0x1836C33b9350D18304e0F701DE777Cc7501E9C2a', // Drugged Huskies
 ];
 
 let nswfNFTs = [
