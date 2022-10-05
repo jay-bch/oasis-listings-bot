@@ -36,6 +36,7 @@ let approvedNFTs = [
     '0xD7F68F4349527daE381233dAA120BB42e310C986', // Kimon2
     '0xDB89785426FCcded4C2A24EB6De11c964179561c', // DogechainChimps
     '0x1836C33b9350D18304e0F701DE777Cc7501E9C2a', // Drugged Huskies
+    '0x7391101d5B89835b885900bB7f96C1022F32cDBB', // HWDC
 ];
 
 let nswfNFTs = [
@@ -89,6 +90,10 @@ let getPhotoForToken = async function(token, id) {
         return 'https://ipfs.io/ipfs/QmctDEugXq8osL8ZMKGoKpbaKsjiRFP9QaB6b4BJWjzh7m/' + id + '.jpeg';
     }
 
+    if(token === '0x7391101d5B89835b885900bB7f96C1022F32cDBB') { // HWDC
+        return 'https://ipfs.io/ipfs/bafybeiale67l7kdijnitk2phyleezubphtyy6nzdsts25guekxjpdgif4i/' + id + '.png';
+    }
+
     if(token === '0xDB89785426FCcded4C2A24EB6De11c964179561c') { // DogeChainChimps
         return 'https://oasisnft.cash/output/dogechainchimps/images/' + id + '.png';
     }
@@ -139,6 +144,10 @@ let getTokenMetaDataName = async function(token, id) {
 
         if(token === '0x5fEf6BAEa34eA78B07Da6E1c36909897b96f1772') { // ApePunks
             url = 'https://ipfs.io/ipfs/QmQhg3r4Rj4Dr3UvRh2Nf5eNU9oFgLGRvC5RtmPeuHjHbZ/' + id + '.json';
+        }
+
+        if(token === '0x7391101d5B89835b885900bB7f96C1022F32cDBB') { // ApePunks
+            url = 'https://ipfs.io/ipfs/bafybeieepvmeah74jbghkidh5a6neb4bicxageaxykw5fgpelebtl5ho54/' + id + '.json';
         }
 
         if(token === '0xFED9E67c30C76e416371B4763FC02f8a33e52b5D') { //Doge DickButts
