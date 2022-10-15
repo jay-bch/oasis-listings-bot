@@ -29,7 +29,7 @@ let approvedNFTs = [
     '0xE46727bb5B84d574eCCa7e562A36c23525FcF8Dc', // Council of Frogs
     '0xa2E57fa488cf272c87b066e2a3E0672c0c58784d', // Nightmare Rats
     '0x8F49C3CdDc3D5571eE9Ac05dC42be0Bdd01f8E60', // DogeChain Shibes
-    '0x5fEf6BAEa34eA78B07Da6E1c36909897b96f1772', // ApePunks
+    // '0x5fEf6BAEa34eA78B07Da6E1c36909897b96f1772', // ApePunks
     '0xFED9E67c30C76e416371B4763FC02f8a33e52b5D', // Doge DickButts
     '0xA716093013a0859f7de7a7eBBC40dd7e3eEb91cA', // Doge Versus
     '0xC995199DC53922caCE4f6ac14A476eF8c9429387', // Kimon
@@ -37,6 +37,8 @@ let approvedNFTs = [
     '0xDB89785426FCcded4C2A24EB6De11c964179561c', // DogechainChimps
     '0x1836C33b9350D18304e0F701DE777Cc7501E9C2a', // Drugged Huskies
     '0x7391101d5B89835b885900bB7f96C1022F32cDBB', // HWDC
+    '0xB6E6b0167CE72057f6AC28Cb5FD836896b4D084E', // Dogebears
+    '0x9b291b0e9C78CE1C94b701D3d9faaD349C4be341', // Blinders
 ];
 
 let nswfNFTs = [
@@ -82,9 +84,9 @@ let getPhotoForToken = async function(token, id) {
         return 'https://ipfs.io/ipfs/bafybeicbmh5xvvtn5ogg3zdfrot6a5sjoxzys2dtmhl4dlfrxs4xidmvhq/' + id + '.png';
     }
 
-    if(token === '0x5fEf6BAEa34eA78B07Da6E1c36909897b96f1772') { // ApePunks
-        return 'https://ipfs.io/ipfs/QmauVScsMHYDzKqYarWByxfbwh8Kk8eTfQQr2ATYj5LEt2/' + id + '.png';
-    }
+    // if(token === '0x5fEf6BAEa34eA78B07Da6E1c36909897b96f1772') { // ApePunks
+    //     return 'https://ipfs.io/ipfs/QmauVScsMHYDzKqYarWByxfbwh8Kk8eTfQQr2ATYj5LEt2/' + id + '.png';
+    // }
 
     if(token === '0xFED9E67c30C76e416371B4763FC02f8a33e52b5D') { // Doge Dickbutts
         return 'https://ipfs.io/ipfs/QmctDEugXq8osL8ZMKGoKpbaKsjiRFP9QaB6b4BJWjzh7m/' + id + '.jpeg';
@@ -94,8 +96,16 @@ let getPhotoForToken = async function(token, id) {
         return 'https://ipfs.io/ipfs/bafybeiale67l7kdijnitk2phyleezubphtyy6nzdsts25guekxjpdgif4i/' + id + '.png';
     }
 
+    if(token === '0xB6E6b0167CE72057f6AC28Cb5FD836896b4D084E') { // Dogebars
+        return 'https://ipfs.io/ipfs/QmNa9JHi2t7F4Hazm4NAiRCkG7WuACf1SJL5awBwX24kN9/' + id + '.png';
+    }
+
     if(token === '0xDB89785426FCcded4C2A24EB6De11c964179561c') { // DogeChainChimps
         return 'https://oasisnft.cash/output/dogechainchimps/images/' + id + '.png';
+    }
+
+    if(token === '0x9b291b0e9C78CE1C94b701D3d9faaD349C4be341') { // Blinders
+        return 'https://ipfs.io/ipfs/bafybeigjrjjr4zk3wqgl27hswlsylbvr5u2nrt54zxzk2crtav7s7fvuca/' + id + '.png';
     }
 
 
@@ -146,12 +156,20 @@ let getTokenMetaDataName = async function(token, id) {
             url = 'https://ipfs.io/ipfs/QmQhg3r4Rj4Dr3UvRh2Nf5eNU9oFgLGRvC5RtmPeuHjHbZ/' + id + '.json';
         }
 
-        if(token === '0x7391101d5B89835b885900bB7f96C1022F32cDBB') { // ApePunks
-            url = 'https://ipfs.io/ipfs/bafybeieepvmeah74jbghkidh5a6neb4bicxageaxykw5fgpelebtl5ho54/' + id + '.json';
-        }
+        // if(token === '0x7391101d5B89835b885900bB7f96C1022F32cDBB') { // ApePunks
+        //     url = 'https://ipfs.io/ipfs/bafybeieepvmeah74jbghkidh5a6neb4bicxageaxykw5fgpelebtl5ho54/' + id + '.json';
+        // }
 
         if(token === '0xFED9E67c30C76e416371B4763FC02f8a33e52b5D') { //Doge DickButts
             url = 'https://ipfs.io/ipfs/QmXucZ4Su3AfP5jc9vRRLaRhTkZHdEVuQCKReeAB8wRAiZ/' + id;
+        }
+
+        if(token === '0xFED9E67c30C76e416371B4763FC02f8a33e52b5D') { //Dogebears
+            url = 'https://ipfs.io/ipfs/QmPZSMNuNk2dg4UcvvZNZJQp8YqicCn7z9nr2YkzCmYshL/' + id;
+        }
+
+        if(token === '0x9b291b0e9C78CE1C94b701D3d9faaD349C4be341') { //Blinders
+            url = 'https://ipfs.io/ipfs/bafybeidltf4kklyiht5kenvh4vjzsr3pijpzduwhdujzt5xh3szyo25nzi/' + id;
         }
 
         return fetch(url).then(async function (response) {
